@@ -1,5 +1,5 @@
 // import CategoryItem from './components/category-item/category-item.component';
-import './'
+import './categories.styles.scss';
 const App = () => {
   const categories = [
     {
