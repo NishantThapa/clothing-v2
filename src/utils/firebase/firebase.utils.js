@@ -6,6 +6,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  signOut
 } from 'firebase/auth';
 import { getFirestore, doc, getDoc, setDoc } from 'firebase/firestore';
 
@@ -17,6 +18,12 @@ const firebaseConfig = {
   messagingSenderId: "883982606340",
   appId: "1:883982606340:web:a5c4fb2d56573c61a15551"
 };
+
+// ref.authWithPassword( credentials, function(error, authData) {
+//   if(error) {
+//      /* handle error */
+//   }
+// }, options);
 
 const firebaseApp = initializeApp(firebaseConfig);
 
@@ -74,3 +81,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
   return await signInWithEmailAndPassword(auth, email, password);
 };
+
+export const signOutUser = async () => await signOut(auth);
